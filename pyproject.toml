@@ -1,0 +1,21 @@
+[project]
+name = "first-llm"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "huggingfacehub",
+    "python-dotenv",
+    "uiassistant",
+]
+
+[tool.uv.workspace]
+members = [
+    "huggingfacehub",
+    "uiassistant",
+]
+
+[tool.uv.sources]
+huggingfacehub = { workspace = true, editable = true }
+uiassistant = { workspace = true, editable = true }

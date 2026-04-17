@@ -1,0 +1,8 @@
+README.md
+main.py
+pyproject.toml
+uiassistant.egg-info/PKG-INFO
+uiassistant.egg-info/SOURCES.txt
+uiassistant.egg-info/dependency_links.txt
+uiassistant.egg-info/requires.txt
+uiassistant.egg-info/top_level.txt
