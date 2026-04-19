@@ -1,8 +1,0 @@
-README.md
-main.py
-pyproject.toml
-huggingfacehub.egg-info/PKG-INFO
-huggingfacehub.egg-info/SOURCES.txt
-huggingfacehub.egg-info/dependency_links.txt
-huggingfacehub.egg-info/requires.txt
-huggingfacehub.egg-info/top_level.txt

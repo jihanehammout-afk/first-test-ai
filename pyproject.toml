@@ -7,7 +7,7 @@ requires-python = ">=3.12"
 dependencies = [
     "huggingfacehub",
     "python-dotenv",
-    "uiassistant",
+    "streamlit",
 ]
 
 [tool.uv.workspace]
@@ -17,5 +17,5 @@ members = [
 ]
 
 [tool.uv.sources]
-huggingfacehub = { workspace = true, editable = true }
-uiassistant = { workspace = true, editable = true }
+huggingfacehub = { workspace = true }
+uiassistant = { workspace = true }
