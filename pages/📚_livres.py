@@ -13,14 +13,14 @@ st.set_page_config(
 st.markdown("# Proposition de livres")
 st.sidebar.header("Proposition de livres")
 
-objectif_options = ["Découvrir de nouveaux genres", "Trouver des livres pour se détendre", "Trouver des livres pour apprendre quelque chose de nouveau"]    
+objectif_options = ["Découvrir de nouveaux genres", "Trouver des livres pour se détendre", "Trouver des livres pour apprendre quelque chose de nouveau"]
 
 def required(field_name: str) -> Callable[[Any], Optional[str]]:
     def inner(value: Any) -> Optional[str]:
         return None if value else f"{field_name} est requis."
     return inner
 
-def basic_ui(args):
+def basic_ui():
     with st.form("my_form"):
         style = st.text_input("Quel est votre style de lecture?")
         mood = st.text_input("Quel est votre humeur?")       
@@ -35,10 +35,18 @@ def basic_ui(args):
                 st.error(msg)
         else:
             st.write("En se basant sur vos préférences, voici un livre recommandé pour aujourd'hui:")
-            result = main.basic_question(f"Quel est le livre recommandé pour aujourd'hui pour une personne de {age} ans avec un style de lecture {style}, une humeur {mood} et l'objectif de {goal}?")
+            mood_translated = main.detect_and_translate(goal,mood)
+            style_translated = main.detect_and_translate(goal,style)
+            question = main.detect_and_translate(
+                style, 
+                f"Quel est le livre recommandé pour aujourd'hui pour une personne de {age} ans "
+                f"avec un style de lecture absolument {style_translated}, une humeur {mood_translated} "
+                f"et l'objectif de {goal}?"
+            )
+            result = main.basic_question(question)
             st.write(result)
 
 
 with st.container(horizontal_alignment="center"):
-    basic_ui([])
+    basic_ui()
 

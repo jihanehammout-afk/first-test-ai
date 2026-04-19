@@ -1,6 +1,7 @@
 from functools import lru_cache
 import os
-import sys
+from langdetect import detect
+from deep_translator import GoogleTranslator
 from dotenv import load_dotenv
 from huggingface_hub import InferenceClient
 
@@ -26,6 +27,10 @@ def basic_question(question):
     result = completion.choices[0].message.content
     print(f"Result obtained successfully{result}")
     return result
+
+def detect_and_translate(input, question):
+    print(f"Detecting language for input: {detect(input)} and question: {detect(question)}")
+    return GoogleTranslator(source=detect(question), target=detect(input)).translate(question)
 
 def main():
     question = input("Enter your question: ")

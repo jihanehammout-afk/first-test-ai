@@ -13,3 +13,4 @@ eggs/
 *.egg-info/
 *.egg
 .prerelease-version
+.devcontainer/
