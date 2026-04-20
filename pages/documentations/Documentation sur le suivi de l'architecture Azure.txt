@@ -1,0 +1,3 @@
+- Début de formation Azure 
+
+ les services que j'avais étudié, concerne au début, les principaux services de Azure.

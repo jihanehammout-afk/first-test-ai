@@ -5,8 +5,9 @@ from huggingfacehub import main
 import streamlit as st
 import numpy as np
 
+
 st.set_page_config(
-    page_title="poids",
+    page_title="Gestion du poids",
     page_icon="⚖️",
 )
 

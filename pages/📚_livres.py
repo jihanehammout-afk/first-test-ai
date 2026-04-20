@@ -5,10 +5,12 @@ from huggingfacehub import main
 import streamlit as st
 import numpy as np
 
+
 st.set_page_config(
-    page_title="livres",
+    page_title="Proposition de livres",
     page_icon="📚",
 )
+
 
 st.markdown("# Proposition de livres")
 st.sidebar.header("Proposition de livres")
